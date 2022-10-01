@@ -4,11 +4,25 @@ import java.io.File;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 
+/**
+ * A class that represents list of airlines.
+ * @author Halidu Mubasir
+ */
+
 public class ListOfAirlines{
+    /**
+	 * Instance Variables/Fields
+	 */
 
-    private Map<String, Airline> listOfAirlines = new HashMap<>();
-    private Airline airline;
+    private Map<String, Airline> listOfAirlines = new HashMap<>(); // Hashmap to contain the list of all airline with their IDs as keys
+    private Airline airline; // Private airline object
 
+
+    /**
+     * Reading the airlines.csv file and creating a hashmap of airlines with their IDs as keys.
+     * returns a hash map
+     * @return this.listOfAirlines
+     */
     public Map<String, Airline> readAirlines(){
         try {
             File myObj = new File("airlines.csv");
@@ -32,10 +46,18 @@ public class ListOfAirlines{
         return this.listOfAirlines;
     }
 
+    /**
+     * This function returns the size of the list of airlines
+     * 
+     * @return The size of the hashmap
+     */
     public int getSize(){
         return readAirlines().size();
     }
 
+    /**
+     * This function displays the list of airlines
+     */
     public void displayairlines(){
         for(var airline : listOfAirlines.values()) {
             System.out.println(airline.getId());

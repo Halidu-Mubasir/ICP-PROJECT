@@ -1,5 +1,13 @@
+/**
+ * A class that represents a route.
+ * @author Halidu Mubasir
+ */
+
 public class Route {
-    
+    /**
+     * Instance variables/fields
+     */
+
     private String airline;
     private String airlineID;
     private String sourceAirport;
@@ -10,14 +18,16 @@ public class Route {
 
 
     /**
+     *  * Constructor:
+	 * Build and initialise objects of this class
      * 
-     * @param airline
-     * @param airlineID
-     * @param sourceAirport
-     * @param sourceAirportId
-     * @param destinationAirport
-     * @param destinationAirportId
-     * @param stops
+     * @param airline               the airline IATA code
+     * @param airlineID             the airline id for the route
+     * @param sourceAirport         the source airport of the route
+     * @param sourceAirportId       the source airport id for the route
+     * @param destinationAirport    the destination airport for the route
+     * @param destinationAirportId  the destination airport id for the route
+     * @param stops                 the number of stops along the route
      */
     public Route(String airline, String airlineID, String sourceAirport, 
                 String sourceAirportId, String destinationAirport, 
@@ -31,31 +41,64 @@ public class Route {
                     this.stops = stops;
     }
 
+
+    /**
+     * returns airline id
+     * @return this.airlineID
+     */
     public String getAirlineID(){
-        return airlineID;
+        return this.airlineID;
     }
 
+
+    /**
+     * returns source airport id
+     * @return this.sourceAirportId
+     */
     public String getSourceAirportId(){
-        return sourceAirportId;
+        return this.sourceAirportId;
     }
 
+    /**
+     * returns destination airport id
+     * @return this.destinationAirportId
+     */
     public String getdestinationAirportID(){
-        return destinationAirportId;
+        return this.destinationAirportId;
     }
 
+
+    /**
+     * returns number of stops
+     * @return this.stops
+     */
     public int getStops(){
-        return stops;
+        return this.stops;
     }
 
+
+    /**
+     * returns airline IATA
+     * @return this.airline
+     */
     public String getAirline(){
-        return airline;
+        return this.airline;
     }
 
+    /**
+     * returns source airport
+     * @return this.sourceAirport
+     */
     public String getSourceAirport(){
-        return sourceAirport;
+        return this.sourceAirport;
     }
 
+
+    /**
+     * returns destination airport
+     * @return this.destiantionAirport
+     */
     public String getdestinationAirport(){
-        return destinationAirport;
+        return this.destinationAirport;
     }
 }

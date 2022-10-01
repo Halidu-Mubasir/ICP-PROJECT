@@ -5,9 +5,17 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * A class that represents file manager.
+ * @author Halidu Mubasir
+ */
 
 public class ManageTextFile {
 
+    /**
+     * creates a new text file
+     * @param filename
+     */
     public void createFile(String filename){
         try {
             File fileObject = new File(filename);
@@ -21,6 +29,11 @@ public class ManageTextFile {
         }
     }
 
+
+    /**
+     * writes to a file with the a given pathname
+     * @param pathname
+     */
     public void writeToFile(String pathname){
         try {
             Scanner scanner = new Scanner(System.in);
@@ -40,6 +53,13 @@ public class ManageTextFile {
         }
     }
 
+
+    /**
+     * reads a file with a given pathname
+     * returns an array of string with the cities and countries
+     * @param pathname
+     * @return inputInfo the information about the places we want to get route for.
+     */
     public ArrayList<String> readFile(String pathname){
         ArrayList<String> inputInfo = new ArrayList<>();
         try {

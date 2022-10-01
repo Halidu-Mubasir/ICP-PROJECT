@@ -4,16 +4,24 @@ import java.io.File;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 
+/**
+ * A class that represents a list of airports.
+ * @author Halidu Mubasir
+ */
+
 public class ListOfAirports {
-    
-    private Map<String, Airport> listOfAirports = new HashMap<>();
-    private Airport airport;
+    /**
+     * Instance variables/fields
+     */
 
-    /* public void addAirport(){
-        airport = readAirports();
-        listOfAirports.put(airport.getAirportId(), airport);
-    } */
+    private Map<String, Airport> listOfAirports = new HashMap<>(); // Maps all airports to their IDs
+    private Airport airport; // Airport object
 
+    /**
+     * Reading the airports.csv file and creating a hashmap of airports with their IDs as keys.
+     * returns a hash map
+     * @return this.listOfAirports
+     */
     public Map<String, Airport> readAirports(){
         try {
             File myObj = new File("airports.csv");
@@ -38,10 +46,18 @@ public class ListOfAirports {
         return this.listOfAirports;
     }
 
+    /**
+     * This function returns the size of the list of airports
+     * 
+     * @return The size of the hashmap.
+     */
     public int getSize(){
         return readAirports().size();
     }
 
+    /**
+     * This function displays the list of airports
+     */
     public void displayAirports(){
         for(var airport : listOfAirports.values()) {
             System.out.println(airport.getAirportCity());
