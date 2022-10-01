@@ -1,5 +1,5 @@
 public class Airline {
-    
+
     private String id;
     private String name;
     private String alias;
