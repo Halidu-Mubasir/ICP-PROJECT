@@ -78,7 +78,5 @@ public class ManageTextFile {
             fnfe.printStackTrace();
         }
         return inputInfo;
-    }
-
-    
+    }   
 }

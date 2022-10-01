@@ -1,2 +1,2 @@
-Tamale,Ghana
-Minneapolis,United States
+Accra,Ghana
+Winnipeg,Canada

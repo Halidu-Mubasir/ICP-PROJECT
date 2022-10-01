@@ -24,7 +24,7 @@ public class SearchRoute {
         String initialCountry = infoArray.get(1);
         String destinationCountry = infoArray.get(3);
 
-        var find = new FindRoute(initCity,initialCountry, destinationCity, destinationCountry); // Instantiates the findRoute class which represents the problem
+        var find = new RouteProblem(initCity,initialCountry, destinationCity, destinationCountry); // Instantiates the findRoute class which represents the problem
         var node = new Node(find.getInitAirport()); // Creates a node object
         
        

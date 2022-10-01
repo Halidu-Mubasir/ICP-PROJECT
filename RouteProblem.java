@@ -6,7 +6,7 @@ import java.util.Queue;
  * A class that represents the problem (How to find the route).
  * @author Halidu Mubasir
  */
-public class FindRoute{
+public class RouteProblem{
     /**
 	 * Instance Variables/Fields
 	 */
@@ -26,9 +26,11 @@ public class FindRoute{
 	 * Build and initialise objects of this class
      * 
      * @param init_city the city where the journey starts
+     * @param init_country the country where the journey starts
      * @param final_city the city the journey ends
+     * @param final_country the country where the journey ends
      */
-    public FindRoute(String init_city,String init_country,  String final_city, String final_country){
+    public RouteProblem(String init_city,String init_country,  String final_city, String final_country){
         this.init_city = init_city;
         this.final_city = final_city;
         this.init_country = init_country;
