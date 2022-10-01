@@ -8,8 +8,8 @@ public class Node {
     /**
 	 * Instance Variables/Fields
 	 */
-    public Airport state;
-    public Node parent = null;
+    private Airport state;
+    private Node parent = null;
 
     /**
      * Constructor:
@@ -22,6 +22,24 @@ public class Node {
     public Node(Airport state, Node parent){
         this.state = state;
         this.parent = parent;
+    }
+
+   /**
+    * This function returns the state of the airport
+    * 
+    * @return The state of the airport.
+    */
+    public Airport getState(){
+        return this.state;
+    }
+
+    /**
+     * This function returns the parent of the current node
+     * 
+     * @return The parent node of the current node.
+     */
+    public Node getParent(){
+        return this.parent;
     }
 
     /**

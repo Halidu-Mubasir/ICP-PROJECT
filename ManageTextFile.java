@@ -37,7 +37,7 @@ public class ManageTextFile {
     public void writeToFile(String pathname){
         try {
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Enter start city and country: ");
+            System.out.println("Enter start city and country separated by ',', \nthen enter destination details on the next line: ");
             String startCity = scanner.nextLine();
 
             String destinationCity = scanner.nextLine();
@@ -66,7 +66,7 @@ public class ManageTextFile {
             File readerObject = new File(pathname);
             Scanner myReader = new Scanner(readerObject);
             while (myReader.hasNextLine()){
-                String[] sourceInfo = myReader.nextLine().split(" ");   
+                String[] sourceInfo = myReader.nextLine().split(",");   
                 for (var info : sourceInfo){
                     inputInfo.add(info);
                 }
@@ -79,4 +79,6 @@ public class ManageTextFile {
         }
         return inputInfo;
     }
+
+    
 }

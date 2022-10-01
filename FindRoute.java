@@ -17,16 +17,22 @@ public class FindRoute{
     private ListOfRoutes routes = new ListOfRoutes();
     private String init_city;
     private String final_city;
+    private String init_country;
+    private String final_country;
 
 
     /**
+     * Constructor:
+	 * Build and initialise objects of this class
      * 
      * @param init_city the city where the journey starts
      * @param final_city the city the journey ends
      */
-    public FindRoute(String init_city, String final_city){
+    public FindRoute(String init_city,String init_country,  String final_city, String final_country){
         this.init_city = init_city;
         this.final_city = final_city;
+        this.init_country = init_country;
+        this.final_country = final_country;
     }
 
    /**
@@ -44,8 +50,9 @@ public class FindRoute{
             if (route.getSourceAirportId().equals(airport.getAirportId())){
                 String destination_airport_id = route.getdestinationAirportID();
                 var desAirport = this.airports.readAirports().get(destination_airport_id);
-                if (desAirport != null)
+                if (desAirport != null){
                     succStates.add(desAirport);
+                }
             }       
         }
         return succStates;
@@ -59,7 +66,7 @@ public class FindRoute{
     */
     public Airport getInitAirport(){
         for (var air : airports.readAirports().values()){
-            if (air.getAirportCity().equals(this.init_city))
+            if (air.getAirportCity().equals(this.init_city) && air.getAirportCountry().equals(this.init_country))
                 this.airport1 = air;
         }
         return this.airport1;
@@ -73,25 +80,23 @@ public class FindRoute{
  * @return Boolean
  */
     public Boolean goalTest(Airport airport){
-        boolean dex = false;
+        boolean isGoal = false;
         for (var air : airports.readAirports().values()){
-            if (air.getAirportCity().equals(this.final_city)){
+            if (air.getAirportCity().equals(this.final_city) && air.getAirportCountry().equals(this.final_country)){
                 for (var route : routes.readroutes().values()){
                     if (route.getSourceAirportId().equals(airport.getAirportId()) && 
                     route.getdestinationAirportID().equals(air.getAirportId())){
                         this.rout = route;
-                        String source_airport_id = this.rout.getSourceAirportId();
+            
                         String destination_airport_id = this.rout.getdestinationAirportID();
-                        var sorAirport = this.airports.readAirports().get(source_airport_id);
-
                         var desAirport = this.airports.readAirports().get(destination_airport_id);
-                        System.out.println(route.getAirline()+" " +sorAirport.getAirportIATA()+" " +desAirport.getAirportIATA());
-                        dex = true;
+                        System.out.println("The destination airport is " +desAirport.getAirportName());
+                        isGoal = true;
                         break;
                     }
                 }            
             }
         }
-        return dex;
+        return isGoal;
     }
 }
